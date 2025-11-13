@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'inicio' %}">🐄 Sistema de Administración Granja_Vacas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navs">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navs">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- 🏠 INICIO -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+        </li>
+
+        <!-- 🐮 VACAS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">🐮 Vacas</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'agregar_vaca' %}">Agregar Vaca</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_vacas' %}">Ver Vacas</a></li>
+          </ul>
+        </li>
+
+        <!-- 🧑‍🌾 PERSONAL -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">👷 Personal</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'agregar_personal' %}">Agregar Personal</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_personal' %}">Ver Personal</a></li>
+          </ul>
+        </li>
+
+        <!-- 🥛 PRODUCCIÓN -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">🥛 Producción</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'agregar_produccion' %}">Agregar Producción</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_produccion' %}">Ver Producción</a></li>
+          </ul>
+        </li>
+
+        <!-- 💉 EVENTOS SANITARIOS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">💉 Evento Sanitario</a>
+          <ul class="dropdown-menu">
+<li><a class="dropdown-item" href="{% url 'agregar_evento_sanitario' %}">Agregar Evento</a></li>
+<li><a class="dropdown-item" href="{% url 'ver_evento_sanitario' %}">Ver Eventos</a></li>
+
+
+          </ul>
+        </li>
+
+        <!-- 💰 VENTAS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">💰 Ventas</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'agregar_venta' %}">Agregar Venta</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_ventas' %}">Ver Ventas</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

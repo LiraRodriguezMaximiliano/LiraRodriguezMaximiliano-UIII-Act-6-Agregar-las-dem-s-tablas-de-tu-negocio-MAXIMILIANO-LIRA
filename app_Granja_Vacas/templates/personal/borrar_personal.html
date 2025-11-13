@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>¿Eliminar a {{ persona.nombre }} {{ persona.apellido }}?</h2>
+<form method="post">{% csrf_token %}
+  <button class="btn btn-danger">Confirmar</button>
+  <a href="{% url 'ver_personal' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

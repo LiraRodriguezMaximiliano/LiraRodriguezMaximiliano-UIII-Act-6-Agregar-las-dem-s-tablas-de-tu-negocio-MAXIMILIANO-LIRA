@@ -1,9 +1,5 @@
-# LiraRodriguezMaximiliano-UIII-Act-6-Agregar-las-dem-s-tablas-de-tu-negocio-MAXIMILIANO-LIRA
-<img width="1353" height="686" alt="image" src="https://github.com/user-attachments/assets/1057eca2-a905-4c13-9480-185d8a47e7b4" />
-<img width="1366" height="679" alt="image" src="https://github.com/user-attachments/assets/0aebb8f5-e736-4c29-9d88-283f47c47a32" />
-<img width="1366" height="643" alt="image" src="https://github.com/user-attachments/assets/c9416b77-ecd9-46a6-a2c6-2b2a3fddb041" />
-<img width="1366" height="691" alt="image" src="https://github.com/user-attachments/assets/98ed8d61-265a-4215-9414-98fafef591be" />
-<img width="1356" height="715" alt="image" src="https://github.com/user-attachments/assets/2e28e6ed-95b0-4645-978e-40fd49d019ae" />
-<img width="1366" height="688" alt="image" src="https://github.com/user-attachments/assets/bdd0564f-c84c-4180-8f96-8428246f6dac" />
-
-
+# UIII-Act-5-tercera-parte-MAXIMILIANO-LIRA
+<img width="1907" height="985" alt="image" src="https://github.com/user-attachments/assets/37434b97-deea-45a6-ab37-15c11d8d0fe1" />
+<img width="1920" height="841" alt="image" src="https://github.com/user-attachments/assets/f3094a58-163d-47d8-98b9-23ce2d699e27" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/eace4699-3464-483b-9251-6c5d48b7e60a" />
+<img width="1919" height="951" alt="image" src="https://github.com/user-attachments/assets/2c316599-b174-4e42-80c8-e0b3858f7214" />

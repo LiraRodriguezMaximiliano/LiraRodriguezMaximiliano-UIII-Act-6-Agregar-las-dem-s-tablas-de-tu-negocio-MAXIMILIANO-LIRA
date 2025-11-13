@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Venta</h2>
+<form method="post">{% csrf_token %}
+  <select name="vendedor" class="form-control mb-2">
+    {% for v in vendedores %}
+      <option value="{{ v.id }}" {% if venta.vendedor.id == v.id %}selected{% endif %}>{{ v.nombre }} {{ v.apellido }}</option>
+    {% endfor %}
+  </select>
+  <input type="date" name="fecha" value="{{ venta.fecha|date:'Y-m-d' }}" class="form-control mb-2">
+
+  <input name="producto" value="{{ venta.producto }}" class="form-control mb-2">
+  <input name="cantidad" value="{{ venta.cantidad }}" class="form-control mb-2">
+  <input name="precio_unidad" value="{{ venta.precio_unidad }}" class="form-control mb-2">
+  <button class="btn btn-success">Actualizar</button>
+</form>
+{% endblock %}

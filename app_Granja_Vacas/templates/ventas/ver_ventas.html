@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Ventas Registradas</h2>
+<table class="table table-striped">
+  <tr><th>Vendedor</th><th>Fecha</th><th>Producto</th><th>Cantidad</th><th>Precio/U</th><th>Total</th><th>Acciones</th></tr>
+  {% for v in ventas %}
+  <tr>
+    <td>{{ v.vendedor.nombre }} {{ v.vendedor.apellido }}</td>
+    <td>{{ v.fecha }}</td>
+    <td>{{ v.producto }}</td>
+    <td>{{ v.cantidad }}</td>
+    <td>{{ v.precio_unidad }}</td>
+    <td>{{ v.precio_total }}</td>
+    <td>
+      <a href="{% url 'actualizar_venta' v.pk %}" class="btn btn-primary btn-sm">Editar</a>
+      <a href="{% url 'borrar_venta' v.pk %}" class="btn btn-danger btn-sm">Borrar</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>¿Eliminar la venta de {{ venta.producto }} realizada por {{ venta.vendedor.nombre }}?</h2>
+<form method="post">{% csrf_token %}
+  <button class="btn btn-danger">Confirmar</button>
+  <a href="{% url 'ver_ventas' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

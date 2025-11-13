@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <div class="card p-4 shadow-sm">
+    <h3 class="text-danger mb-4">⚠️ Confirmar eliminación</h3>
+    <p>¿Seguro que deseas eliminar el evento <strong>{{ evento.tipo_evento }}</strong> de la vaca <strong>{{ evento.vaca.nombre }}</strong>?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center gap-3 mt-3">
+        <a href="{% url 'ver_evento_sanitario' %}" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-danger">🗑️ Eliminar</button>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock %}

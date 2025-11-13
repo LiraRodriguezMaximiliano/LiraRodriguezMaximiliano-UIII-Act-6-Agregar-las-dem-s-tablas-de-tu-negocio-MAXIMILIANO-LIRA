@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lista de Personal</h2>
+<table class="table table-striped">
+  <tr><th>Nombre</th><th>Apellido</th><th>Puesto</th><th>Salario</th><th>Contacto</th><th>Acciones</th></tr>
+  {% for p in personal %}
+  <tr>
+    <td>{{ p.nombre }}</td>
+    <td>{{ p.apellido }}</td>
+    <td>{{ p.puesto }}</td>
+    <td>{{ p.salario }}</td>
+    <td>{{ p.contacto }}</td>
+    <td>
+      <a href="{% url 'actualizar_personal' p.pk %}" class="btn btn-primary btn-sm">Editar</a>
+      <a href="{% url 'borrar_personal' p.pk %}" class="btn btn-danger btn-sm">Borrar</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

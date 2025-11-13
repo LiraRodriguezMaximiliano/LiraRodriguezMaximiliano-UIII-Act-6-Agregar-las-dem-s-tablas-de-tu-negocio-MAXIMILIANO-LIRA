@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Producción</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Vaca</label>
+        <select name="vaca" class="form-select">
+            {% for v in vacas %}
+            <option value="{{ v.id }}">{{ v.numero_identificacion }} - {{ v.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3"><label>Fecha Registro</label><input type="date" name="fecha_registro" class="form-control"></div>
+    <div class="mb-3"><label>Cantidad Litros</label><input name="cantidad_litros" class="form-control"></div>
+    <div class="mb-3"><label>Turno</label><input name="turno" class="form-control"></div>
+    <div class="mb-3"><label>Calidad</label><input name="calidad" class="form-control"></div>
+    <div class="mb-3"><label>Empleado Registro</label><input name="empleado_registro" class="form-control"></div>
+    <div class="mb-3"><label>Equipo Usado</label><input name="equipo_usado" class="form-control"></div>
+    <button class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

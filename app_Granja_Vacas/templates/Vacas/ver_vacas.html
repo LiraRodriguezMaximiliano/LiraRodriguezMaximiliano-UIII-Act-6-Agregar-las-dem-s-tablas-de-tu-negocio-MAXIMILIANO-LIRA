@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Listado de Vacas</h2>
+<table class="table table-striped">
+    <thead><tr>
+    <th>ID</th><th>Nº Identif.</th><th>Nombre</th><th>Raza</th><th>Fecha Nac.</th><th>Acciones</th>
+    </tr></thead>
+    <tbody>
+    {% for v in vacas %}
+    <tr>
+        <td>{{ v.pk }}</td>
+        <td>{{ v.numero_identificacion }}</td>
+        <td>{{ v.nombre }}</td>
+        <td>{{ v.raza }}</td>
+        <td>{{ v.fecha_nacimiento }}</td>
+        <td>
+        <a class="btn btn-sm btn-success" href="{% url 'actualizar_vaca' v.pk %}">Editar</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'borrar_vaca' v.pk %}">Borrar</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">No hay vacas registradas.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

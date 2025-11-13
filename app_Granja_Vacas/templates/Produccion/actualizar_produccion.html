@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Producción</h2>
+<form method="post" action="{% url 'realizar_actualizacion_produccion' produccion.pk %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Vaca</label>
+        <select name="vaca" class="form-select">
+            {% for v in vacas %}
+            <option value="{{ v.id }}" {% if v.id == produccion.vaca.id %}selected{% endif %}>
+                {{ v.numero_identificacion }} - {{ v.nombre }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3"><label>Fecha Registro</label><input type="date" name="fecha_registro" value="{{ produccion.fecha_registro|date:'Y-m-d' }}" class="form-control"></div>
+    <div class="mb-3"><label>Cantidad Litros</label><input name="cantidad_litros" value="{{ produccion.cantidad_litros }}" class="form-control"></div>
+    <div class="mb-3"><label>Turno</label><input name="turno" value="{{ produccion.turno }}" class="form-control"></div>
+    <div class="mb-3"><label>Calidad</label><input name="calidad" value="{{ produccion.calidad }}" class="form-control"></div>
+    <div class="mb-3"><label>Empleado Registro</label><input name="empleado_registro" value="{{ produccion.empleado_registro }}" class="form-control"></div>
+    <div class="mb-3"><label>Equipo Usado</label><input name="equipo_usado" value="{{ produccion.equipo_usado }}" class="form-control"></div>
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

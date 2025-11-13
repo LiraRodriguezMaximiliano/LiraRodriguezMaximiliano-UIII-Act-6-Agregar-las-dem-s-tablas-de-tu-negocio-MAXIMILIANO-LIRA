@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">💉 Eventos Sanitarios Registrados</h2>
+    <a href="{% url 'agregar_evento_sanitario' %}" class="btn btn-success mb-3">➕ Agregar Evento</a>
+    <table class="table table-bordered table-hover shadow-sm">
+    <thead class="table-light">
+        <tr>
+        <th>Vaca</th>
+        <th>Tipo de Evento</th>
+        <th>Fecha</th>
+        <th>Veterinario</th>
+        <th>Costo</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in eventos %}
+        <tr>
+        <td>{{ e.vaca.nombre }}</td>
+        <td>{{ e.tipo_evento }}</td>
+        <td>{{ e.fecha_evento }}</td>
+        <td>{{ e.veterinario }}</td>
+        <td>${{ e.costo }}</td>
+        <td>
+            <a href="{% url 'actualizar_evento_sanitario' e.id %}" class="btn btn-sm btn-primary">Editar</a>
+            <a href="{% url 'borrar_evento_sanitario' e.id %}" class="btn btn-sm btn-danger">Borrar</a>
+        </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-center">No hay eventos registrados.</td></tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>¿Deseas borrar este registro?</h2>
+<p><strong>Vaca:</strong> {{ produccion.vaca.nombre }} — {{ produccion.cantidad_litros }} L</p>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Confirmar Borrado</button>
+    <a href="{% url 'ver_produccion' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

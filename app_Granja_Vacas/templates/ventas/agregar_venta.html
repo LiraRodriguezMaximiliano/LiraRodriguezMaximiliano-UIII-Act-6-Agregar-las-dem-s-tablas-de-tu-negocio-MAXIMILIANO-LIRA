@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Venta</h2>
+<form method="post">{% csrf_token %}
+  <select name="vendedor" class="form-control mb-2">
+    {% for v in vendedores %}
+      <option value="{{ v.id }}">{{ v.nombre }} {{ v.apellido }}</option>
+    {% endfor %}
+  </select>
+  <input type="date" name="fecha" class="form-control mb-2">
+  <input name="producto" placeholder="Producto" class="form-control mb-2">
+  <input name="cantidad" placeholder="Cantidad" class="form-control mb-2">
+  <input name="precio_unidad" placeholder="Precio por unidad" class="form-control mb-2">
+  <button class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}

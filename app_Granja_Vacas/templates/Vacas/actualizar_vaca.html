@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Vaca</h2>
+<form method="post" action="{% url 'realizar_actualizacion_vaca' vaca.pk %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Número de Identificación</label>
+        <input name="numero_identificacion" value="{{ vaca.numero_identificacion }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Nombre</label>
+        <input name="nombre" value="{{ vaca.nombre }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Fecha de Nacimiento</label>
+        <input type="date" name="fecha_nacimiento" value="{{ vaca.fecha_nacimiento|date:'Y-m-d' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Raza</label>
+        <input name="raza" value="{{ vaca.raza }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Estado Reproductivo</label>
+        <input name="estado_reproductivo" value="{{ vaca.estado_reproductivo }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Peso (kg)</label>
+        <input name="peso_kg" value="{{ vaca.peso_kg }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Corral Actual</label>
+        <input name="corral_actual" value="{{ vaca.corral_actual }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Notas</label>
+        <textarea name="notas" class="form-control">{{ vaca.notas }}</textarea>
+    </div>
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

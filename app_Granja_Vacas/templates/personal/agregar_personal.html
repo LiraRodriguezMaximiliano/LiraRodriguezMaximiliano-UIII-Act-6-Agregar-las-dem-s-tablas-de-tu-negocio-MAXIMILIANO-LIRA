@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Personal</h2>
+<form method="post">{% csrf_token %}
+  <input name="nombre" placeholder="Nombre" class="form-control mb-2">
+  <input name="apellido" placeholder="Apellido" class="form-control mb-2">
+  <select name="puesto" class="form-control mb-2">
+    <option value="Vendedor">Vendedor</option>
+    <option value="Limpiador">Limpiador</option>
+    <option value="Ordeñador">Ordeñador</option>
+    <option value="Veterinario">Veterinario</option>
+    <option value="Supervisor">Supervisor</option>
+  </select>
+  <input name="salario" placeholder="Salario" class="form-control mb-2">
+  <input name="contacto" placeholder="Contacto" class="form-control mb-2">
+  <button class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}

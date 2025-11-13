@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Personal</h2>
+<form method="post">{% csrf_token %}
+  <input name="nombre" value="{{ persona.nombre }}" class="form-control mb-2">
+  <input name="apellido" value="{{ persona.apellido }}" class="form-control mb-2">
+  <select name="puesto" class="form-control mb-2">
+    {% for p in persona.PUESTOS %}
+      <option value="{{ p.0 }}" {% if persona.puesto == p.0 %}selected{% endif %}>{{ p.1 }}</option>
+    {% endfor %}
+  </select>
+  <input name="salario" value="{{ persona.salario }}" class="form-control mb-2">
+  <input name="contacto" value="{{ persona.contacto }}" class="form-control mb-2">
+  <button class="btn btn-success">Actualizar</button>
+</form>
+{% endblock %}
